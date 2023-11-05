@@ -18,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1', 'namespace' => 'API/v1'], function () {
     Route::post('register', [UserController::class, 'register']);
     Route::post('login', [UserController::class, 'login']);
+
+    Route::get('foods', [\App\Http\Controllers\API\v1\FoodController::class, 'index']);
+    Route::get('foods/{id}', [\App\Http\Controllers\API\v1\FoodController::class, 'show']);
 });
